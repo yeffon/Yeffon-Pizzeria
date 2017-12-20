@@ -32,7 +32,13 @@
     <ClCompile Include="YeffonPizzeria.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="storeClasses.cpp">
+    <ClCompile Include="pizza.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="desserts.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

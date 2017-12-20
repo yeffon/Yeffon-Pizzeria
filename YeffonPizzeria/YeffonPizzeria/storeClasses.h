@@ -2,25 +2,25 @@
 #ifndef storeClasses
 #define storeClasses
 
-class Pizza
-{
-public:
-	Pizza();
-	~Pizza();
-};
+	class Pizza
+	{
+		public:
+			Pizza();
+			~Pizza();
+	};
 
-class Wings
-{
-public:
-	Wings();
-	~Wings();
-};
+	class Wings
+	{
+		public:
+			Wings();
+			~Wings();
+	};
 
-class Desserts
-{
-public:
-	Desserts();
-	~Desserts();
-};
+	class Desserts
+	{
+		public:
+			Desserts();
+			~Desserts();
+	};
 #endif // DEBUG
 
