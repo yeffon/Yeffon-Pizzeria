@@ -143,7 +143,7 @@ void Pizza::toppingCase()
 
 	else if (confirmation == "n" || confirmation == "N")
 	{
-		//goto toppingEntry;
+		pizzaToppings();
 	}
 
 	else

@@ -21,6 +21,8 @@
 		public:
 			Wings();
 			~Wings();
+			void wingAmt();
+			void wingFlavor();
 	};
 
 	class Desserts
