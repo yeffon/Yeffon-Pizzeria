@@ -6,7 +6,7 @@
 #include "storeClasses.h"
 using namespace std;
 
-int toppingAmt, i = 0;
+static int toppingAmt, i = 0;
 string confirmation, toppings[5];
 
 Pizza::Pizza()
@@ -21,7 +21,7 @@ Pizza::~Pizza()
 
 void Pizza::pizzaAmt()
 {
-	int pizzaAmt, i = 1;
+	static int pizzaAmt, i = 1;
 	Pizza pizzas[10];
 
 	cout << "How many pizzas do you want? (Max: 10)" << endl;
