@@ -51,272 +51,105 @@ void Pizza::pizzaSize()
 
 void Pizza::pizzaToppings()
 {
-toppingEntry:
+	toppingEntry:
 	cout << "How many toppings do you want (Max: 5)" << endl;
 	cin >> toppingAmt;
 
 	switch (toppingAmt)
 	{
-	case 0:
-	confirmEntry:
-		cout << "You choice was no toppings? y/n?" << endl;
-		cin >> confirmation;
+		case 0:
+			confirmEntry:
+			cout << "You choice was no toppings? y/n?" << endl;
+			cin >> confirmation;
 
-		if (confirmation == "y" || confirmation == "Y")
-		{
-			cout << "Okay, your order has been placed!" << endl;
-		}
+			if (confirmation == "y" || confirmation == "Y")
+			{
+				cout << "Okay, your order has been placed!" << endl;
+			}
 
-		else if (confirmation == "n" || confirmation == "N")
-		{
+			else if (confirmation == "n" || confirmation == "N")
+			{
+				goto toppingEntry;
+			}
+
+			else
+			{
+				cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
+				goto confirmEntry;
+			}
+
+		case 1:
+			toppingCase();
+			break;
+
+		case 2:
+			toppingCase();
+			break;
+
+		case 3:
+			toppingCase();
+			break;
+
+		case 4:
+			toppingCase();
+			break;
+
+		case 5:
+			toppingCase();
+			break;
+
+		default:
+			cout << "ERROR: You are allowed 0-5 topping. Please enter a number from 0-5" << endl;
 			goto toppingEntry;
-		}
+			break;
+	}
+}
 
-		else
-		{
-			cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
-			goto confirmEntry;
-		}
+void Pizza::toppingCase()
+{
+	cout << "What toppings do you want on your pizza?" << endl;
+	cout << "We offer: Pepperoni, Sausage, Buffalo, BBQ, Pineapple, Mushroom, Vodka, Anchioves" << endl;
 
-	case 1:
-		cout << "What toppings do you want on your pizza?" << endl;
-		cout << "We offer: Pepperoni, Sausage, Buffalo, BBQ, Pineapple, Mushroom, Vodka, Anchioves" << endl;
-
-		//Asks user their topping(s) and stores it in an array
-		for (i; i < toppingAmt; i++)
-		{
-			cin >> toppings[i];
-		}
+	//Asks user their topping(s) and stores it in an array
+	for (i; i < toppingAmt; i++)
+	{
+		cin >> toppings[i];
+	}
 
 	confirmEntry1:
-		cout << "So your toppings are: ";
+	cout << "So your toppings are: ";
 
-		//Prints out the topping(s) for conformation
-		for (int j = 0; j < i; j++)
+	//Prints out the topping(s) for conformation
+	for (int j = 0; j < i; j++)
+	{
+		if (j < i - 1)
 		{
-			if (j < i - 1)
-			{
-				cout << toppings[j] << ", ";
-			}
-
-			else
-			{
-				cout << toppings[j] << endl;
-				cout << "Is this correct? y/n?" << endl;
-			}
-		}
-
-		cin >> confirmation;
-
-		if (confirmation == "y" || confirmation == "Y")
-		{
-			cout << "Okay, your order has been placed!" << endl;
-		}
-
-		else if (confirmation == "n" || confirmation == "N")
-		{
-			goto toppingEntry;
+			cout << toppings[j] << ", ";
 		}
 
 		else
 		{
-			cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
-			goto confirmEntry1;
+			cout << toppings[j] << endl;
+			cout << "Is this correct? y/n?" << endl;
 		}
-		break;
+	}
 
-	case 2:
-		cout << "What toppings do you want on your pizza?" << endl;
-		cout << "We offer: Pepperoni, Sausage, Buffalo, BBQ, Pineapple, Mushroom, Vodka, Anchioves" << endl;
+	cin >> confirmation;
 
-		//Asks user their topping(s) and stores it in an array
-		for (i; i < toppingAmt; i++)
-		{
-			cin >> toppings[i];
-		}
+	if (confirmation == "y" || confirmation == "Y")
+	{
+		cout << "Okay, your order has been placed!" << endl;
+	}
 
-	confirmEntry2:
-		cout << "So your toppings are: ";
+	else if (confirmation == "n" || confirmation == "N")
+	{
+		//goto toppingEntry;
+	}
 
-		//Prints out the topping(s) for conformation
-		for (int j = 0; j < i; j++)
-		{
-			if (j < i - 1)
-			{
-				cout << toppings[j] << ", ";
-			}
-
-			else
-			{
-				cout << toppings[j] << endl;
-				cout << "Is this correct? y/n?" << endl;
-			}
-		}
-
-		cin >> confirmation;
-
-		if (confirmation == "y" || confirmation == "Y")
-		{
-			cout << "Okay, your order has been placed!" << endl;
-		}
-
-		else if (confirmation == "n" || confirmation == "N")
-		{
-			goto toppingEntry;
-		}
-
-		else
-		{
-			cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
-			goto confirmEntry2;
-		}
-		break;
-
-	case 3:
-		cout << "What toppings do you want on your pizza?" << endl;
-		cout << "We offer: Pepperoni, Sausage, Buffalo, BBQ, Pineapple, Mushroom, Vodka, Anchioves" << endl;
-
-		//Asks user their topping(s) and stores it in an array
-		for (i; i < toppingAmt; i++)
-		{
-			cin >> toppings[i];
-		}
-
-	confirmEntry3:
-		cout << "So your toppings are: ";
-
-		//Prints out the topping(s) for conformation
-		for (int j = 0; j < i; j++)
-		{
-			if (j < i - 1)
-			{
-				cout << toppings[j] << ", ";
-			}
-
-			else
-			{
-				cout << toppings[j] << endl;
-				cout << "Is this correct? y/n?" << endl;
-			}
-		}
-
-		cin >> confirmation;
-
-		if (confirmation == "y" || confirmation == "Y")
-		{
-			cout << "Okay, your order has been placed!" << endl;
-		}
-
-		else if (confirmation == "n" || confirmation == "N")
-		{
-			goto toppingEntry;
-		}
-
-		else
-		{
-			cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
-			goto confirmEntry3;
-		}
-		break;
-
-	case 4:
-		cout << "What toppings do you want on your pizza?" << endl;
-		cout << "We offer: Pepperoni, Sausage, Buffalo, BBQ, Pineapple, Mushroom, Vodka, Anchioves" << endl;
-
-		//Asks user their topping(s) and stores it in an array
-		for (i; i < toppingAmt; i++)
-		{
-			cin >> toppings[i];
-		}
-
-	confirmEntry4:
-		cout << "So your toppings are: ";
-
-		//Prints out the topping(s) for conformation
-		for (int j = 0; j < i; j++)
-		{
-			if (j < i - 1)
-			{
-				cout << toppings[j] << ", ";
-			}
-
-			else
-			{
-				cout << toppings[j] << endl;
-				cout << "Is this correct? y/n?" << endl;
-			}
-		}
-
-		cin >> confirmation;
-
-		if (confirmation == "y" || confirmation == "Y")
-		{
-			cout << "Okay, your order has been placed!" << endl;
-		}
-
-		else if (confirmation == "n" || confirmation == "N")
-		{
-			goto toppingEntry;
-		}
-
-		else
-		{
-			cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
-			goto confirmEntry4;
-		}
-		break;
-
-	case 5:
-		cout << "What toppings do you want on your pizza?" << endl;
-		cout << "We offer: Pepperoni, Sausage, Buffalo, BBQ, Pineapple, Mushroom, Vodka, Anchioves" << endl;
-
-		//Asks user their topping(s) and stores it in an array
-		for (i; i < toppingAmt; i++)
-		{
-			cin >> toppings[i];
-		}
-
-	confirmEntry5:
-		cout << "So your toppings are: ";
-
-		//Prints out the topping(s) for conformation
-		for (int j = 0; j < i; j++)
-		{
-			if (j < i - 1)
-			{
-				cout << toppings[j] << ", ";
-			}
-
-			else
-			{
-				cout << toppings[j] << endl;
-				cout << "Is this correct? y/n?" << endl;
-			}
-		}
-
-		cin >> confirmation;
-
-		if (confirmation == "y" || confirmation == "Y")
-		{
-			cout << "Okay, your order has been placed!" << endl;
-		}
-
-		else if (confirmation == "n" || confirmation == "N")
-		{
-			goto toppingEntry;
-		}
-
-		else
-		{
-			cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
-			goto confirmEntry5;
-		}
-		break;
-
-	default:
-		cout << "ERROR: You are allowed 0-5 topping. Please enter a number from 0-5" << endl;
-		goto toppingEntry;
-		break;
+	else
+	{
+		cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
+		goto confirmEntry1;
 	}
 }
 

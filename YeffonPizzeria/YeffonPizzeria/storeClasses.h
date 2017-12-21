@@ -13,6 +13,7 @@
 			void pizzaAmt();
 			void pizzaSize();
 			void pizzaToppings();
+			void toppingCase();
 	};
 
 	class Wings
