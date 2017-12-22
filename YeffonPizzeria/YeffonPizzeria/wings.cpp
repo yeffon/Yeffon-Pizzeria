@@ -29,7 +29,7 @@ void Wings::wingAmt()
 		{
 
 		}
+
+		
 	} while (wingAmt >= 10 || wingAmt <= 100);
-
-
 }

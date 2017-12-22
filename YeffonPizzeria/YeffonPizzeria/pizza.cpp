@@ -38,14 +38,34 @@ void Pizza::pizzaAmt()
 
 void Pizza::pizzaSize()
 {
-	string pSize;
+	enum Size { s, m, l };
 
-	cout << "What size pizza do you want: S, M, or L?" << endl;
+	string pSize;
+	Size size;
+
+	cout << "Enter a pizza size: (S, M, L)" << endl;
 	cin >> pSize;
 
-	if (pSize == "S" || pSize == "s" || pSize == "M" || pSize == "m" || pSize == "L" || pSize == "l")
+	pSize = size;
+
+	switch (size)
 	{
-		cout << "Okay, On to Topping!" << endl;
+		case 's':
+			cout << "You ordered a small" << endl;
+			break;
+
+		case 'm':
+			cout << "You ordered a medium" << endl;
+			break;
+
+		case 'l':
+			cout << "You ordered a large" << endl;
+			break;
+
+		default:
+			cout << "ERROR: Enter s for small, m for medium, l for large." << endl;
+			pizzaSize();
+			break;
 	}
 }
 
