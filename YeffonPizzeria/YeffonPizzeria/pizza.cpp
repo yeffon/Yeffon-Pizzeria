@@ -6,7 +6,8 @@
 #include "storeClasses.h"
 using namespace std;
 
-static int toppingAmt, i = 0;
+static int toppingAmt, 
+i = 0;
 string confirmation, toppings[5];
 
 Pizza::Pizza()
@@ -38,32 +39,30 @@ void Pizza::pizzaAmt()
 
 void Pizza::pizzaSize()
 {
-	enum Size { s, m, l };
+	//enum Size { s, m, l };
 
-	string pSize;
-	Size size;
+	int pSize;
+	//Size size;
 
-	cout << "Enter a pizza size: (S, M, L)" << endl;
+	cout << "Enter a pizza size: (1 for small, 2 for medium, 3 for large)" << endl;
 	cin >> pSize;
 
-	pSize = size;
-
-	switch (size)
+	switch (pSize)
 	{
-		case 's':
+		case 1:
 			cout << "You ordered a small" << endl;
 			break;
 
-		case 'm':
+		case 2:
 			cout << "You ordered a medium" << endl;
 			break;
 
-		case 'l':
+		case 3:
 			cout << "You ordered a large" << endl;
 			break;
 
 		default:
-			cout << "ERROR: Enter s for small, m for medium, l for large." << endl;
+			cout << "ERROR: Enter 1 for small, 2 for medium, 3 for large." << endl;
 			pizzaSize();
 			break;
 	}
