@@ -35,5 +35,5 @@ void Wings::wingAmt()
 
 void Wings::wingFlavor()
 {
-	
+	string flavor;
 }

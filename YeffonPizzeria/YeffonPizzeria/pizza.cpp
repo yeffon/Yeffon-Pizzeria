@@ -41,13 +41,13 @@ void Pizza::pizzaSize()
 {
 	//enum Size { s, m, l };
 
-	int pSize;
+	string pSize;
 	//Size size;
 
-	cout << "Enter a pizza size: (1 for small, 2 for medium, 3 for large)" << endl;
+	cout << "Enter a pizza size: (s for small, m for medium, l for large)" << endl;
 	cin >> pSize;
 
-	switch (pSize)
+	/*switch (pSize)
 	{
 		case 1:
 			cout << "You ordered a small" << endl;
@@ -65,6 +65,30 @@ void Pizza::pizzaSize()
 			cout << "ERROR: Enter 1 for small, 2 for medium, 3 for large." << endl;
 			pizzaSize();
 			break;
+	}*/
+
+	do
+	{
+		if (pSize == "s")
+		{
+			cout << "You ordered a small" << endl;
+		}
+
+		else if (pSize == "m")
+		{
+			cout << "You ordered a medium" << endl;
+		}
+
+		else if (pSize == "l")
+		{
+			cout << "You ordered a large" << endl;
+		}
+	} while ((pSize == "s") || (pSize == "m") || (pSize == "l"));
+
+	if ((pSize != "s") || (pSize != "m") || (pSize != "l"))
+	{
+		cout << "ERROR: Enter s for small, m for medium, l for large." << endl;
+		pizzaSize();
 	}
 }
 
@@ -159,7 +183,7 @@ void Pizza::toppingCase()
 
 		if (confirmation == "y" || confirmation == "Y")
 		{
-			cout << "Okay, your order has been placed!" << endl;
+			cout << "Okay, Added to your cart!" << endl;
 		}
 
 		else if (confirmation == "n" || confirmation == "N")
