@@ -27,9 +27,13 @@ void Wings::wingAmt()
 	{
 		if (wingAmt == 10 || wingAmt == 20 || wingAmt == 30 || wingAmt == 40 || wingAmt == 50 || wingAmt == 100)
 		{
-
+			wingFlavor();
 		}
 
-		
 	} while (wingAmt >= 10 || wingAmt <= 100);
+}
+
+void Wings::wingFlavor()
+{
+	
 }

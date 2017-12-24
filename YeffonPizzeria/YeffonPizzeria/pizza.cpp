@@ -135,40 +135,44 @@ void Pizza::toppingCase()
 		cin >> toppings[i];
 	}
 
-	confirmEntry1:
-	cout << "So your toppings are: ";
-
-	//Prints out the topping(s) for conformation
-	for (int j = 0; j < i; j++)
+	do
 	{
-		if (j < i - 1)
+		confirmEntry1:
+		cout << "So your toppings are: ";
+
+		//Prints out the topping(s) for conformation
+		for (int j = 0; j < i; j++)
 		{
-			cout << toppings[j] << ", ";
+			if (j < i - 1)
+			{
+				cout << toppings[j] << ", ";
+			}
+
+			else
+			{
+				cout << toppings[j] << endl;
+				cout << "Is this correct? y/n?" << endl;
+			}
+		}
+
+		cin >> confirmation;
+
+		if (confirmation == "y" || confirmation == "Y")
+		{
+			cout << "Okay, your order has been placed!" << endl;
+		}
+
+		else if (confirmation == "n" || confirmation == "N")
+		{
+			pizzaToppings();
 		}
 
 		else
 		{
-			cout << toppings[j] << endl;
-			cout << "Is this correct? y/n?" << endl;
+			cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
+			goto confirmEntry1;
 		}
-	}
 
-	cin >> confirmation;
-
-	if (confirmation == "y" || confirmation == "Y")
-	{
-		cout << "Okay, your order has been placed!" << endl;
-	}
-
-	else if (confirmation == "n" || confirmation == "N")
-	{
-		pizzaToppings();
-	}
-
-	else
-	{
-		cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
-		goto confirmEntry1;
-	}
+	} while ((toppings[i] == "pepperoni") || (toppings[i] == "sausage") || (toppings[i] == "bbq") || (toppings[i] == "pineapple") || (toppings[i] == "vodka") || (toppings[i] == "mushroom"));
 }
 
