@@ -6,8 +6,7 @@
 #include "storeClasses.h"
 using namespace std;
 
-static int toppingAmt, 
-i = 0;
+static int toppingAmt, i = 0;
 string confirmation, toppings[5];
 
 Pizza::Pizza()
@@ -39,55 +38,34 @@ void Pizza::pizzaAmt()
 
 void Pizza::pizzaSize()
 {
-	//enum Size { s, m, l };
-
 	string pSize;
-	//Size size;
 
 	cout << "Enter a pizza size: (s for small, m for medium, l for large)" << endl;
 	cin >> pSize;
 
-	/*switch (pSize)
+	if (pSize == "s")
 	{
-		case 1:
-			cout << "You ordered a small" << endl;
-			break;
+		cout << "You ordered a small" << endl;
+		pizzaToppings();
+	}
 
-		case 2:
-			cout << "You ordered a medium" << endl;
-			break;
-
-		case 3:
-			cout << "You ordered a large" << endl;
-			break;
-
-		default:
-			cout << "ERROR: Enter 1 for small, 2 for medium, 3 for large." << endl;
-			pizzaSize();
-			break;
-	}*/
-
-	do
+	else if (pSize == "m")
 	{
-		if (pSize == "s")
-		{
-			cout << "You ordered a small" << endl;
-		}
+		cout << "You ordered a medium" << endl;
+		pizzaToppings();
+	}
 
-		else if (pSize == "m")
-		{
-			cout << "You ordered a medium" << endl;
-		}
-
-		else if (pSize == "l")
-		{
-			cout << "You ordered a large" << endl;
-		}
-	} while ((pSize == "s") || (pSize == "m") || (pSize == "l"));
+	else if (pSize == "l")
+	{
+		cout << "You ordered a large" << endl;
+		pizzaToppings();
+	}
 
 	if ((pSize != "s") || (pSize != "m") || (pSize != "l"))
 	{
 		cout << "ERROR: Enter s for small, m for medium, l for large." << endl;
+		cin.clear();
+		cin.sync();
 		pizzaSize();
 	}
 }
@@ -118,6 +96,8 @@ void Pizza::pizzaToppings()
 			else
 			{
 				cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
+				cin.clear();
+				cin.sync();
 				goto confirmEntry;
 			}
 
@@ -143,6 +123,8 @@ void Pizza::pizzaToppings()
 
 		default:
 			cout << "ERROR: You are allowed 0-5 topping. Please enter a number from 0-5" << endl;
+			cin.clear();
+			cin.sync();
 			goto toppingEntry;
 			break;
 	}
@@ -159,25 +141,36 @@ void Pizza::toppingCase()
 		cin >> toppings[i];
 	}
 
+	//Prints out the topping(s) for conformation
+	for (int j = 0; j < i; j++)
+	{
+		break;
+
+		if (j < i - 1)
+		{
+			cout << toppings[j] << ", ";
+		}
+
+		else
+		{
+			cout << toppings[j] << endl;
+			cout << "Is this correct? y/n?" << endl;
+		}
+	}
+
+	while ((toppings[i] != "pepperoni") || (toppings[i] != "sausage") || (toppings[i] != "bbq") || (toppings[i] != "pineapple") || (toppings[i] != "vodka") || (toppings[i] != "mushroom"))
+	{
+		cout << "ERROR: Please enter our offered toppings" << endl;
+		cin.clear();
+		cin.sync();
+		toppingCase();
+		break;
+	}
+
 	do
 	{
 		confirmEntry1:
 		cout << "So your toppings are: ";
-
-		//Prints out the topping(s) for conformation
-		for (int j = 0; j < i; j++)
-		{
-			if (j < i - 1)
-			{
-				cout << toppings[j] << ", ";
-			}
-
-			else
-			{
-				cout << toppings[j] << endl;
-				cout << "Is this correct? y/n?" << endl;
-			}
-		}
 
 		cin >> confirmation;
 
@@ -194,6 +187,8 @@ void Pizza::toppingCase()
 		else
 		{
 			cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
+			cin.clear();
+			cin.sync();
 			goto confirmEntry1;
 		}
 
