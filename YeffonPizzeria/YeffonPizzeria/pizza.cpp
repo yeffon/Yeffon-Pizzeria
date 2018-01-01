@@ -34,8 +34,6 @@ void Pizza::pizzaAmt()
 			cout << "What is the size of pizza: " << i << endl;
 			pizzas[i].pizzaSize();
 		}
-
-		//pizzas[i].pizzaSize();
 	}
 }
 
@@ -144,6 +142,8 @@ void Pizza::toppingCase()
 		cin >> toppings[i];
 	}
 
+	cout << "So your toppings are: ";
+
 	//Prints out the topping(s) for conformation
 	for (int j = 0; j < i; j++)
 	{
@@ -155,45 +155,29 @@ void Pizza::toppingCase()
 		else
 		{
 			cout << toppings[j] << endl;
-			
+			cout << "Is this correct? y/n?" << endl;
 		}
 	}
 
-	cout << "Is this correct? y/n?" << endl;
+	confirmEntry1:
+	cin >> confirmation;
 
-	/*while ((toppings[i] != "pepperoni") || (toppings[i] != "sausage") || (toppings[i] != "bbq") || (toppings[i] != "pineapple") || (toppings[i] != "vodka") || (toppings[i] != "mushroom"))
+	if (confirmation == "y" || confirmation == "Y")
 	{
-		cout << "ERROR: Please enter our offered toppings" << endl;
+		cout << "Okay, Added to your cart!" << endl;
+	}
+
+	else if (confirmation == "n" || confirmation == "N")
+	{
+		pizzaToppings();
+	}
+
+	else
+	{
+		cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
 		cin.clear();
 		cin.sync();
-		toppingCase();
-		break;
-	}*/
+		goto confirmEntry1;
+	}
 
-	do
-	{
-		confirmEntry1:
-		cout << "So your toppings are: ";
-
-		cin >> confirmation;
-
-		if (confirmation == "y" || confirmation == "Y")
-		{
-			cout << "Okay, Added to your cart!" << endl;
-		}
-
-		else if (confirmation == "n" || confirmation == "N")
-		{
-			pizzaToppings();
-		}
-
-		else
-		{
-			cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
-			cin.clear();
-			cin.sync();
-			goto confirmEntry1;
-		}
-
-	} while ((toppings[i] == "pepperoni") || (toppings[i] == "sausage") || (toppings[i] == "bbq") || (toppings[i] == "pineapple") || (toppings[i] == "vodka") || (toppings[i] == "mushroom"));
 }

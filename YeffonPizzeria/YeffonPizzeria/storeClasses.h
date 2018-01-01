@@ -2,8 +2,7 @@
 
 #pragma once
 #ifndef storeClasses
-#define storeClasses
-#include <string>
+	#include <string>
 
 	class Pizza
 	{
@@ -31,5 +30,7 @@
 			Desserts();
 			~Desserts();
 	};
+
+#define storeClasses
 #endif // DEBUG
 
