@@ -32,7 +32,10 @@ void Pizza::pizzaAmt()
 		for (i; i <= pizzaAmt; i++)
 		{
 			cout << "What is the size of pizza: " << i << endl;
+			pizzas[i].pizzaSize();
 		}
+
+		//pizzas[i].pizzaSize();
 	}
 }
 
@@ -144,8 +147,6 @@ void Pizza::toppingCase()
 	//Prints out the topping(s) for conformation
 	for (int j = 0; j < i; j++)
 	{
-		break;
-
 		if (j < i - 1)
 		{
 			cout << toppings[j] << ", ";
@@ -154,18 +155,20 @@ void Pizza::toppingCase()
 		else
 		{
 			cout << toppings[j] << endl;
-			cout << "Is this correct? y/n?" << endl;
+			
 		}
 	}
 
-	while ((toppings[i] != "pepperoni") || (toppings[i] != "sausage") || (toppings[i] != "bbq") || (toppings[i] != "pineapple") || (toppings[i] != "vodka") || (toppings[i] != "mushroom"))
+	cout << "Is this correct? y/n?" << endl;
+
+	/*while ((toppings[i] != "pepperoni") || (toppings[i] != "sausage") || (toppings[i] != "bbq") || (toppings[i] != "pineapple") || (toppings[i] != "vodka") || (toppings[i] != "mushroom"))
 	{
 		cout << "ERROR: Please enter our offered toppings" << endl;
 		cin.clear();
 		cin.sync();
 		toppingCase();
 		break;
-	}
+	}*/
 
 	do
 	{
@@ -194,4 +197,3 @@ void Pizza::toppingCase()
 
 	} while ((toppings[i] == "pepperoni") || (toppings[i] == "sausage") || (toppings[i] == "bbq") || (toppings[i] == "pineapple") || (toppings[i] == "vodka") || (toppings[i] == "mushroom"));
 }
-

@@ -13,27 +13,68 @@ Wings::Wings()
 
 Wings::~Wings()
 {
-
+	
 }
 
 void Wings::wingAmt()
 {
-	int wingAmt;
+	static int wingAmt;
 
 	cout << "How many wings: (Enter in 10s)" << endl;
 	cin >> wingAmt;
 
-	do
+	switch (wingAmt)
 	{
-		if (wingAmt == 10 || wingAmt == 20 || wingAmt == 30 || wingAmt == 40 || wingAmt == 50 || wingAmt == 100)
-		{
+		case 10:
 			wingFlavor();
-		}
+			break;
 
-	} while (wingAmt >= 10 || wingAmt <= 100);
+		case 20:
+			wingFlavor();
+			break;
+
+		case 30:
+			wingFlavor();
+			break;
+
+		case 40:
+			wingFlavor();
+			break;
+
+		case 50:
+			wingFlavor();
+			break;
+
+		case 60:
+			wingFlavor();
+			break;
+
+		case 70:
+			wingFlavor();
+			break;
+
+		case 80:
+			wingFlavor();
+			break;
+
+		case 90:
+			wingFlavor();
+			break;
+
+		case 100:
+			wingFlavor();
+			break;
+
+		default:
+			cout << "ERROR: You can only enter numbers in 10s (EX: 10 or 20 or 70)" << endl;
+			break;
+	}
 }
 
 void Wings::wingFlavor()
 {
 	string flavor;
+
+	cout << "Enter a wing flavor: " << endl;
+	cout << "We offer: Buffalo, BBQ, Garlic Parmesan, Lemon Pepper, Spicy, Jerk, or Sirarcha" << endl;
 }
