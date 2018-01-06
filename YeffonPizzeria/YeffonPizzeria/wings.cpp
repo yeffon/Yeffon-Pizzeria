@@ -77,4 +77,9 @@ void Wings::wingFlavor()
 
 	cout << "Enter a wing flavor: " << endl;
 	cout << "We offer: Buffalo, BBQ, Garlic Parmesan, Lemon Pepper, Spicy, Jerk, or Sirarcha" << endl;
+
+	cin >> flavor;
+
+	cout << "So you chose: " << flavor << endl;
+	cout << "Is this correct? y/n" << endl;
 }

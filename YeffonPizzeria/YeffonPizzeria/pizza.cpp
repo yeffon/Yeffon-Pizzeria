@@ -10,30 +10,34 @@ static int toppingAmt, i = 0;
 string confirmation, toppings[5];
 
 Pizza::Pizza()
-{
-
+{	
 }
 
 Pizza::~Pizza()
 {
-
 }
 
 void Pizza::pizzaAmt()
 {
-	static int pizzaAmt, i = 1;
+	static int pAmt, i = 1;
 	Pizza pizzas[10];
 
 	cout << "How many pizzas do you want? (Max: 10)" << endl;
-	cin >> pizzaAmt;
+	cin >> pAmt;
 
-	if (pizzaAmt >= 1)
+	if (pAmt >= 1 && pAmt <= 10)
 	{
-		for (i; i <= pizzaAmt; i++)
+		for (i; i <= pAmt; i++)
 		{
 			cout << "What is the size of pizza: " << i << endl;
 			pizzas[i].pizzaSize();
 		}
+	}
+
+	else
+	{
+		cout << "ERROR: You can only between 1 and 10 pizzas." << endl;
+		pizzaAmt();
 	}
 }
 
@@ -179,5 +183,4 @@ void Pizza::toppingCase()
 		cin.sync();
 		goto confirmEntry1;
 	}
-
 }

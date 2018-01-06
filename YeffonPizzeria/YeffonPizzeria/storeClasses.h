@@ -7,6 +7,7 @@
 	class Pizza
 	{
 		public:
+
 			Pizza();
 			~Pizza();
 			void pizzaAmt();
