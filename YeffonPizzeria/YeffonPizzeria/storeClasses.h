@@ -10,10 +10,10 @@
 
 			Pizza();
 			~Pizza();
-			void pizzaAmt();
-			void pizzaSize();
+			int pizzaAmt();
+			char pizzaSize();
 			void pizzaToppings();
-			void toppingCase();
+			string toppingCase();
 	};
 
 	class Wings
@@ -21,8 +21,8 @@
 		public:
 			Wings();
 			~Wings();
-			void wingAmt();
-			void wingFlavor();
+			int wingAmt();
+			string wingFlavor();
 	};
 
 	class Desserts

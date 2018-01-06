@@ -17,7 +17,7 @@ Pizza::~Pizza()
 {
 }
 
-void Pizza::pizzaAmt()
+int Pizza::pizzaAmt()
 {
 	static int pAmt, i = 1;
 	Pizza pizzas[10];
@@ -36,43 +36,48 @@ void Pizza::pizzaAmt()
 
 	else
 	{
+		cin.clear();
 		cout << "ERROR: You can only between 1 and 10 pizzas." << endl;
-		pizzaAmt();
+		return pizzaAmt();
 	}
+
+	return pAmt;
 }
 
-void Pizza::pizzaSize()
+char Pizza::pizzaSize()
 {
-	string pSize;
+	char pSize;
 
 	cout << "Enter a pizza size: (s for small, m for medium, l for large)" << endl;
 	cin >> pSize;
 
-	if (pSize == "s")
+	if (pSize == 's')
 	{
 		cout << "You ordered a small" << endl;
 		pizzaToppings();
 	}
 
-	else if (pSize == "m")
+	else if (pSize == 'm')
 	{
 		cout << "You ordered a medium" << endl;
 		pizzaToppings();
 	}
 
-	else if (pSize == "l")
+	else if (pSize == 'l')
 	{
 		cout << "You ordered a large" << endl;
 		pizzaToppings();
 	}
 
-	if ((pSize != "s") || (pSize != "m") || (pSize != "l"))
+	if ((pSize != 's') || (pSize != 'm') || (pSize != 'l'))
 	{
 		cout << "ERROR: Enter s for small, m for medium, l for large." << endl;
 		cin.clear();
 		cin.sync();
 		pizzaSize();
 	}
+
+	return pSize;
 }
 
 void Pizza::pizzaToppings()
@@ -135,7 +140,7 @@ void Pizza::pizzaToppings()
 	}
 }
 
-void Pizza::toppingCase()
+string Pizza::toppingCase()
 {
 	cout << "What toppings do you want on your pizza?" << endl;
 	cout << "We offer: Pepperoni, Sausage, Buffalo, BBQ, Pineapple, Mushroom, Vodka, Anchioves" << endl;
@@ -183,4 +188,6 @@ void Pizza::toppingCase()
 		cin.sync();
 		goto confirmEntry1;
 	}
+
+	return toppings[i];
 }
