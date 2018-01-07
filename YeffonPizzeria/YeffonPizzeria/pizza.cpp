@@ -17,7 +17,7 @@ Pizza::~Pizza()
 {
 }
 
-int Pizza::pizzaAmt()
+void Pizza::pizzaAmt()
 {
 	static int pAmt, i = 1;
 	Pizza pizzas[10];
@@ -40,11 +40,9 @@ int Pizza::pizzaAmt()
 		cout << "ERROR: You can only between 1 and 10 pizzas." << endl;
 		return pizzaAmt();
 	}
-
-	return pAmt;
 }
 
-char Pizza::pizzaSize()
+void Pizza::pizzaSize()
 {
 	char pSize;
 
@@ -76,8 +74,6 @@ char Pizza::pizzaSize()
 		cin.sync();
 		pizzaSize();
 	}
-
-	return pSize;
 }
 
 void Pizza::pizzaToppings()
@@ -140,7 +136,7 @@ void Pizza::pizzaToppings()
 	}
 }
 
-string Pizza::toppingCase()
+void Pizza::toppingCase()
 {
 	cout << "What toppings do you want on your pizza?" << endl;
 	cout << "We offer: Pepperoni, Sausage, Buffalo, BBQ, Pineapple, Mushroom, Vodka, Anchioves" << endl;
@@ -188,6 +184,4 @@ string Pizza::toppingCase()
 		cin.sync();
 		goto confirmEntry1;
 	}
-
-	return toppings[i];
 }

@@ -16,7 +16,7 @@ Wings::~Wings()
 	
 }
 
-int Wings::wingAmt()
+void Wings::wingAmt()
 {
 	static int wingAmt;
 
@@ -69,11 +69,9 @@ int Wings::wingAmt()
 			cout << "ERROR: You can only enter numbers in 10s (EX: 10 or 20 or 70)" << endl;
 			break;
 	}
-
-	return wingAmt;
 }
 
-string Wings::wingFlavor()
+void Wings::wingFlavor()
 {
 	string flavor;
 
@@ -84,6 +82,4 @@ string Wings::wingFlavor()
 
 	cout << "So you chose: " << flavor << endl;
 	cout << "Is this correct? y/n" << endl;
-
-	return flavor;
 }
