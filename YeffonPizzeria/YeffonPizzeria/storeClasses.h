@@ -20,7 +20,7 @@
 		public:
 			Wings();
 			~Wings();
-			void wingAmt();
+			void wingsAmt();
 			void wingFlavor();
 	};
 

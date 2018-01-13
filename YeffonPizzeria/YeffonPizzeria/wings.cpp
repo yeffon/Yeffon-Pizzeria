@@ -16,7 +16,7 @@ Wings::~Wings()
 	
 }
 
-void Wings::wingAmt()
+void Wings::wingsAmt()
 {
 	static int wingAmt;
 
@@ -66,7 +66,8 @@ void Wings::wingAmt()
 			break;
 
 		default:
-			cout << "ERROR: You can only enter numbers in 10s (EX: 10 or 20 or 70)" << endl;
+			cout << "ERROR: You can only enter numbers in 10s (EX: 10 or 40 or 70)" << endl;
+			wingsAmt();
 			break;
 	}
 }
@@ -74,12 +75,29 @@ void Wings::wingAmt()
 void Wings::wingFlavor()
 {
 	string flavor;
+	char confirmation;
 
 	cout << "Enter a wing flavor: " << endl;
 	cout << "We offer: Buffalo, BBQ, Garlic Parmesan, Lemon Pepper, Spicy, Jerk, or Sirarcha" << endl;
 
 	cin >> flavor;
 
-	cout << "So you chose: " << flavor << endl;
-	cout << "Is this correct? y/n" << endl;
+	do
+	{
+		cout << "So you chose: " << flavor << endl;
+		cout << "Is this correct? y/n" << endl;
+		cin >> confirmation;
+
+		if (confirmation == 'y' || confirmation == 'Y')
+		{
+			cout << "Okay, Added to your cart!" << endl;
+			break;
+		}
+
+		else if (confirmation == 'n' || confirmation == 'N')
+		{
+			wingFlavor();
+		}
+
+	} while (flavor == "buffalo" || flavor == "bbq" || flavor == "garlic" || flavor == "lemon" || flavor == "spicy" || flavor == "jerk" || flavor == "sirarcha");
 }

@@ -7,7 +7,8 @@
 using namespace std;
 
 static int toppingAmt, i = 0;
-string confirmation, toppings[5];
+string toppings[5];
+char confirmation;
 
 Pizza::Pizza()
 {	
@@ -89,12 +90,12 @@ void Pizza::pizzaToppings()
 			cout << "You choice was no toppings? y/n?" << endl;
 			cin >> confirmation;
 
-			if (confirmation == "y" || confirmation == "Y")
+			if (confirmation == 'y' || confirmation == 'Y')
 			{
 				cout << "Okay, your order has been placed!" << endl;
 			}
 
-			else if (confirmation == "n" || confirmation == "N")
+			else if (confirmation == 'n' || confirmation == 'N')
 			{
 				goto toppingEntry;
 			}
@@ -167,17 +168,18 @@ void Pizza::toppingCase()
 	confirmEntry1:
 	cin >> confirmation;
 
-	if (confirmation == "y" || confirmation == "Y")
+	while (confirmation == 'y' || confirmation == 'Y')
 	{
 		cout << "Okay, Added to your cart!" << endl;
+		break;
 	}
 
-	else if (confirmation == "n" || confirmation == "N")
+	if (confirmation == 'n' || confirmation == 'N')
 	{
 		pizzaToppings();
 	}
 
-	else
+	else if (confirmation != 'y' || confirmation != 'Y' || confirmation != 'n' || confirmation != 'N')
 	{
 		cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
 		cin.clear();
