@@ -82,7 +82,7 @@ void Wings::wingFlavor()
 
 	cin >> flavor;
 
-	do
+	if (flavor == "buffalo" || flavor == "bbq" || flavor == "garlic parmesan" || flavor == "lemon pepper" || flavor == "spicy" || flavor == "jerk" || flavor == "sirarcha")
 	{
 		cout << "So you chose: " << flavor << endl;
 		cout << "Is this correct? y/n" << endl;
@@ -91,13 +91,17 @@ void Wings::wingFlavor()
 		if (confirmation == 'y' || confirmation == 'Y')
 		{
 			cout << "Okay, Added to your cart!" << endl;
-			break;
 		}
 
 		else if (confirmation == 'n' || confirmation == 'N')
 		{
 			wingFlavor();
 		}
+	}
 
-	} while (flavor == "buffalo" || flavor == "bbq" || flavor == "garlic" || flavor == "lemon" || flavor == "spicy" || flavor == "jerk" || flavor == "sirarcha");
+	else
+	{
+		cout << "ERROR: You didn't pick one of our offered flavors. Try again" << endl;
+		wingFlavor();
+	}
 }

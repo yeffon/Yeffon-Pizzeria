@@ -168,18 +168,17 @@ void Pizza::toppingCase()
 	confirmEntry1:
 	cin >> confirmation;
 
-	while (confirmation == 'y' || confirmation == 'Y')
+	if (confirmation == 'y' || confirmation == 'Y')
 	{
 		cout << "Okay, Added to your cart!" << endl;
-		break;
 	}
 
-	if (confirmation == 'n' || confirmation == 'N')
+	else if (confirmation == 'n' || confirmation == 'N')
 	{
 		pizzaToppings();
 	}
 
-	else if (confirmation != 'y' || confirmation != 'Y' || confirmation != 'n' || confirmation != 'N')
+	else 
 	{
 		cout << "ERROR: Enter 'Y' or 'N' for confirmation" << endl;
 		cin.clear();
