@@ -6,6 +6,7 @@
 #include "storeClasses.h"
 using namespace std;
 
+//Constuctor and Destructor
 Wings::Wings()
 {
 
@@ -16,6 +17,7 @@ Wings::~Wings()
 	
 }
 
+//Prompts the user on how many wings they want
 void Wings::wingsAmt()
 {
 	static int wingAmt;
@@ -72,6 +74,7 @@ void Wings::wingsAmt()
 	}
 }
 
+//Prompts the user on what flavor wings they want
 void Wings::wingFlavor()
 {
 	string flavor;

@@ -10,6 +10,7 @@ static int toppingAmt, i = 0;
 string toppings[5];
 char confirmation;
 
+//Constuctor and Destructor
 Pizza::Pizza()
 {	
 }
@@ -18,6 +19,7 @@ Pizza::~Pizza()
 {
 }
 
+//Prompts the user on how many pizzas they want
 void Pizza::pizzaAmt()
 {
 	static int pAmt, i = 1;
@@ -43,6 +45,7 @@ void Pizza::pizzaAmt()
 	}
 }
 
+//Prompt for the pizza size
 void Pizza::pizzaSize()
 {
 	char pSize;
@@ -77,6 +80,7 @@ void Pizza::pizzaSize()
 	}
 }
 
+//Prompt for what toopings is wanted on the pizza(s)
 void Pizza::pizzaToppings()
 {
 	toppingEntry:
@@ -137,6 +141,7 @@ void Pizza::pizzaToppings()
 	}
 }
 
+//Method made only to avoid redundancy in the pizza toppings' switch statement 
 void Pizza::toppingCase()
 {
 	cout << "What toppings do you want on your pizza?" << endl;
@@ -171,6 +176,7 @@ void Pizza::toppingCase()
 	if (confirmation == 'y' || confirmation == 'Y')
 	{
 		cout << "Okay, Added to your cart!" << endl;
+		//TODO: loop back to the pizza[i] in the pizzaAmt
 	}
 
 	else if (confirmation == 'n' || confirmation == 'N')
